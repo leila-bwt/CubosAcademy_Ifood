@@ -1,11 +1,18 @@
-let verificarEnfrentarChefao = (itensColetados, itemNecessario1, itemNecessario2, itemNecessario3);
-
-if(itensColetados.inclues(itemNecessario1) && itensColetados.includes(itemNecessario2) && itensColetados3.includes(itemNecessario3)){
-    return ("PODE ENFRENTAR")
-
-}else {
-    return ("NÃO PODE ENFRENTAR")
-}
+function verificarChefao(itensColetados, itemNecessario1, itemNecessario2, itemNecessario3) {
+    let contadorItens = 0;
+  
+    for (let i = 0; i < itensColetados.length; i++) {
+      if (itensColetados[i] === itemNecessario1 || itensColetados[i] === itemNecessario2 || itensColetados[i] === itemNecessario3) {
+        contadorItens++;
+      }
+  
+      if (contadorItens === 3) {
+        return "PODE ENFRENTAR";
+      }
+    }
+  
+    return "NAO PODE ENFRENTAR";
+  }
 
 // as variaveis estão declaradas como vazias. Os itens entrarão pelo comando 'includes' a cada item necessário adquirido pelo jogagador. Usando o && só aceitará enfrentar caso tenha coletado os três itens necessarios.
 
